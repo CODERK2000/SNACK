@@ -1,0 +1,76 @@
+/* Estilos para la sección "Sobre Nosotros" */
+.section-blue {
+    background-color: #e0f7fa; /* Fondo azul claro */
+    padding: 30px 20px; /* Espaciado interno superior e inferior reducido */
+    text-align: center; /* Alinear el título al centro */
+}
+
+.section-title {
+    font-size: 2rem; /* Tamaño de fuente del título */
+    color: #00796b; /* Color del texto del título */
+    margin: 5px 0 20px; /* Espaciado superior reducido a 5px y espaciado inferior a 20px */
+}
+
+.about-content {
+    display: flex; /* Disposición en línea para texto e imagen */
+    flex-direction: row; /* Dirección de los elementos en fila */
+    align-items: center; /* Alinear verticalmente los elementos */
+    justify-content: space-between; /* Espacio entre el texto y la imagen */
+    max-width: 1200px; /* Ancho máximo de la sección */
+    margin: 0 auto; /* Centrar la sección horizontalmente */
+}
+
+.about-text {
+    flex: 1; /* Permitir que el texto ocupe el espacio disponible */
+    margin-right: 20px; /* Espaciado a la derecha del texto */
+}
+
+.about-text p {
+    font-size: 1.2rem; /* Tamaño de fuente del texto */
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    margin-bottom: 15px; /* Espaciado debajo del párrafo reducido */
+}
+
+.btn-conocenos {
+    display: inline-block; /* Mostrar el botón en línea */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+    color: #ffffff; /* Color del texto del botón */
+    background-color: #00796b; /* Color de fondo del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    text-decoration: none; /* Quitar subrayado del enlace */
+}
+
+.btn-conocenos:hover {
+    background-color: #004d40; /* Color de fondo al pasar el ratón */
+}
+
+.about-image {
+    flex: 1; /* Permitir que la imagen ocupe el espacio disponible */
+    margin-left: 20px; /* Espaciado a la izquierda de la imagen */
+}
+
+.about-image img {
+    width: 100%; /* Ancho de la imagen para que se ajuste al contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la imagen */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Cambiar la dirección a columna en pantallas pequeñas */
+        align-items: center; /* Alinear elementos al centro en pantallas pequeñas */
+    }
+
+    .about-text {
+        margin-right: 0; /* Eliminar el espaciado derecho en pantallas pequeñas */
+        margin-bottom: 20px; /* Espaciado debajo del texto en pantallas pequeñas */
+    }
+
+    .about-image {
+        margin-left: 0; /* Eliminar el espaciado izquierdo en pantallas pequeñas */
+    }
+}

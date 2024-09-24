@@ -1,0 +1,159 @@
+/* Estilos para los íconos */
+.icon1 {
+    font-size: 69px; /* Tamaño del ícono aumentado */
+    width: 80px; /* Tamaño del contenedor del ícono */
+    height: 80px; /* Tamaño del contenedor del ícono */
+    border-radius: 50%; /* Forma circular del contenedor */
+    display: flex;
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
+    animation: pulse 2s infinite; /* Animación de pulso */
+}
+
+/* Animación de pulso con cambio de color */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamaño inicial */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta el tamaño */
+    }
+    100% {
+        transform: scale(1); /* Tamaño original */
+    }
+}
+
+/* Colores y animaciones específicas para íconos masculinos */
+.icon-male {
+    color: #3F51B5; /* Color inicial del ícono masculino */
+    background: #ffffff; /* Fondo blanco para el contenedor */
+    border: 2px solid #3F51B5; /* Borde del contenedor masculino */
+}
+
+.icon-male.pulse {
+    animation: pulse-male 2s infinite; /* Animación de pulso específica para íconos masculinos */
+}
+
+@keyframes pulse-male {
+    0% {
+        color: #3F51B5; /* Color inicial del ícono masculino */
+        background: #ffffff; /* Fondo blanco para el contenedor */
+        border-color: #3F51B5; /* Borde del contenedor masculino */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    }
+    50% {
+        color: #FF5722; /* Color del ícono cambia a naranja */
+        background: #FFE0B2; /* Fondo cambia a color melocotón */
+        border-color: #FF5722; /* Borde cambia a naranja */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    }
+    100% {
+        color: #3F51B5; /* Color del ícono regresa a azul */
+        background: #ffffff; /* Fondo blanco */
+        border-color: #3F51B5; /* Borde regresa a azul */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra original */
+    }
+}
+
+/* Colores y animaciones específicas para íconos femeninos */
+.icon-female {
+    color: #E91E63; /* Color inicial del ícono femenino */
+    background: #ffffff; /* Fondo blanco para el contenedor */
+    border: 2px solid #E91E63; /* Borde del contenedor femenino */
+}
+
+.icon-female.pulse {
+    animation: pulse-female 2s infinite; /* Animación de pulso específica para íconos femeninos */
+}
+
+@keyframes pulse-female {
+    0% {
+        color: #E91E63; /* Color inicial del ícono femenino */
+        background: #ffffff; /* Fondo blanco para el contenedor */
+        border-color: #E91E63; /* Borde del contenedor femenino */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    }
+    50% {
+        color: #FF9800; /* Color del ícono cambia a naranja */
+        background: #FFE0B2; /* Fondo cambia a color melocotón */
+        border-color: #FF9800; /* Borde cambia a naranja */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    }
+    100% {
+        color: #E91E63; /* Color del ícono regresa a rosa */
+        background: #ffffff; /* Fondo blanco */
+        border-color: #E91E63; /* Borde regresa a rosa */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra original */
+    }
+}
+
+/* Estilos generales para la sección de testimonios */
+.section-blue {
+    background-color: #f0f4f8;
+    padding: 50px 20px;
+}
+
+.section-blue h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el contenedor Swiper */
+.swiper-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para las diapositivas del Swiper */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el contenedor de cada testimonio */
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+/* Estilos para las imágenes de los testimonios */
+.testimonial-image {
+    width: 80px; /* Tamaño reducido */
+    height: 80px; /* Tamaño reducido */
+    border-radius: 50%; /* Forma circular */
+    object-fit: cover;
+    border: 2px solid #3F51B5;
+}
+
+/* Estilos para el contenido del testimonio */
+.testimonial-content {
+    text-align: center; /* Centra el texto */
+}
+
+.testimonial-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.testimonial-content cite {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+}

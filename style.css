@@ -1,0 +1,1000 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+/* General styles for header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative; /* Ensures proper positioning of children */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.icono-papa {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end; /* Ensures the toggle is aligned to the right */
+    position: relative;
+}
+
+/* Horizontal menu styles */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #ffcc00;
+}
+
+/* Toggle button styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 20px; /* Positions the toggle almost to the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Centers the toggle vertically in the header */
+}
+
+/* Responsive menu for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        right: 10px; /* Make sure it's aligned to the edge */
+    }
+
+    /* Show menu when active */
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Larger screen sizes for horizontal menu */
+@media screen and (min-width: 769px) {
+    .nav-menu {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+
+
+/* Contenedor principal para centrar todas las secciones */
+main {
+    max-width: 1200px; /* Ancho máximo del contenedor principal */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espaciado horizontal */
+}
+
+/* General para todas las secciones */
+section {
+    border: 2px solid #ddd; /* Color del borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px 0; /* Margen superior e inferior */
+    background-color: #f9f9f9; /* Color de fondo */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilos para la sección con la imagen y el texto */
+#home {
+    display: flex;
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: center; /* Alinea el contenido horizontalmente */
+    padding: 20px;
+    height: 60vh; /* Ajusta la altura de la sección a una proporción menor de la altura de la ventana del navegador */
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se desborde fuera de la sección */
+    background-color: #ffb936; /* Color de fondo */
+
+}
+
+/* Overlay para oscurecer la imagen y mejorar la legibilidad del texto */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente */
+    z-index: -1;
+}
+
+/* Contenedor del contenido */
+.home-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo de la sección */
+}
+
+/* Estilos para el texto */
+.text-content {
+    flex: 1; /* Ocupa el 50% del ancho disponible */
+    color: rgb(255, 255, 255); /* Cambia el color del texto para que sea legible sobre la imagen */
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+    text-align: center;
+    padding: 0 20px; /* Espacio interno */
+    font-size: 24px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Añade un margen inferior al texto */
+}
+
+/* Estilos para la imagen */
+.image-content {
+    flex: 1; /* Ocupa el 50% del ancho disponible */
+    display: none; /* Oculta la imagen por defecto */
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Borde circular */
+    transition: box-shadow 0.3s ease; /* Transición suave para el efecto de iluminación */
+    display: block; /* Asegura que la imagen ocupe todo el contenedor */
+
+}
+
+.image-content img:hover {
+    box-shadow: 0 0 15px rgba(255, 218, 118, 0.8); /* Efecto de iluminación al pasar el mouse */
+}
+
+/* Responsivo para pantallas grandes */
+@media (min-width: 1200px) {
+    #home {
+        background-attachment: fixed; /* Fija la imagen de fondo en pantallas grandes para evitar mucho zoom */
+        background-position: center; /* Centra la imagen */
+    }
+
+    .image-content {
+        display: block; /* Muestra la imagen en pantallas grandes */
+    }
+
+    .text-content {
+        padding-right: 20px; /* Añade un poco de espacio a la derecha del texto */
+    }
+}
+
+/* Responsivo para pantallas medianas */
+@media (max-width: 1200px) {
+    .text-content {
+        font-size: 2em; /* Ajusta el tamaño del texto en pantallas medianas */
+    }
+
+    .text-content p {
+        font-size: 1.2em; /* Ajusta el tamaño del texto en pantallas medianas */
+    }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        height: auto; /* Ajusta la altura de la sección en pantallas pequeñas */
+    }
+
+    .text-content {
+        font-size: 1.8em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .text-content p {
+        font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+
+    .image-content {
+        display: none; /* Oculta la imagen en pantallas pequeñas */
+    }
+}
+
+/* Responsivo para pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .text-content {
+        font-size: 1.5em; /* Ajusta el tamaño del texto en pantallas extra pequeñas */
+    }
+
+    .text-content p {
+        font-size: 0.9em; /* Ajusta el tamaño del texto en pantallas extra pequeñas */
+    }
+}
+
+/* Estilos generales de la sección */
+.section-blue {
+    background-color: #f0f4f8; /* Fondo más claro */
+    padding: 40px 10px; /* Espaciado reducido */
+}
+
+.container {
+    max-width: 960px; /* Máximo ancho del contenedor reducido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 10px; /* Espaciado interno reducido */
+}
+
+.section-title {
+    font-size: 24px; /* Tamaño del título reducido */
+    color: #004d40; /* Color del título */
+    text-align: center;
+    margin-bottom: 30px; /* Espacio debajo del título reducido */
+    font-weight: 700; /* Negrita para el título */
+}
+/* Estilos generales de la sección */
+.section-blue {
+    background-color: #f0f4f8; /* Fondo más claro */
+    padding: 40px 10px; /* Espaciado reducido */
+}
+
+.container {
+    max-width: 960px; /* Máximo ancho del contenedor reducido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 10px; /* Espaciado interno reducido */
+}
+
+.section-title {
+    font-size: 24px; /* Tamaño del título reducido */
+    color: #004d40; /* Color del título */
+    text-align: center;
+    margin-bottom: 30px; /* Espacio debajo del título reducido */
+    font-weight: 700; /* Negrita para el título */
+}
+
+.about-content {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    flex-direction: row; /* Asegura que la disposición sea horizontal */
+    gap: 20px; /* Espacio reducido entre texto e imagen */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente en su contenedor */
+}
+
+.about-image img {
+    width: 100px; /* Tamaño de la imagen reducido */
+    height: 100px; /* Tamaño de la imagen reducido */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para la imagen */
+}
+
+.about-text {
+    flex: 2; /* Ajusta el ancho del texto para que ocupe más espacio */
+    max-width: 500px; /* Ancho máximo reducido del bloque de texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.about-text p {
+    font-size: 16px; /* Tamaño del texto reducido */
+    color: #333; /* Color del texto */
+    line-height: 1.5; /* Espaciado entre líneas reducido */
+    margin-bottom: 15px; /* Espacio debajo del párrafo reducido */
+}
+
+.btn-conocenos {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00796b; /* Color del botón */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px; /* Tamaño del texto del botón reducido */
+    font-weight: 600; /* Negrita para el texto del botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.btn-conocenos:hover {
+    background-color: #004d40; /* Color de hover del botón */
+}
+
+
+
+
+
+/* Sección de Servicios */
+#services {
+    border-color: #ff0000; /* Color del borde específico para la sección de servicios */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo */
+    position: relative; /* Para posicionar las flechas de navegación dentro de este contenedor */
+    overflow: hidden; /* Oculta el contenido que excede el contenedor */
+}
+
+.service {
+    margin-bottom: 15px; /* Espacio inferior entre servicios */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff; /* Fondo blanco para los servicios */
+}
+
+/* Sección de Galería de Imágenes */
+#gallery {
+    border-color: #3F51B5; /* Color del borde específico para la sección de galería */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo */
+    position: relative; /* Para posicionar las flechas de navegación dentro de este contenedor */
+}
+
+/* Contenedor del slider */
+.swiper-container {
+    width: 100%; /* Ancho completo del contenedor del slider */
+    max-width: 100%; /* Asegúrate de que no haya un ancho máximo que limite la vista */
+    overflow: hidden; /* Oculta el contenido que excede el contenedor */
+    position: relative; /* Posiciona los elementos internos de manera absoluta si es necesario */
+}
+
+/* Wrapper del slider */
+.swiper-wrapper {
+    display: flex; /* Usa flexbox para alinear los slides */
+    gap: 0; /* Elimina el espacio entre los slides */
+}
+
+/* Cada slide del slider */
+.swiper-slide {
+    display: flex; /* Usa flexbox para alinear las imágenes */
+    justify-content: center; /* Centra las imágenes dentro del slide */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    transition: transform 0.5s ease; /* Transición suave para el zoom */
+}
+
+/* Imagen dentro de cada slide */
+.swiper-slide img {
+    width: 100%; /* Ancho completo del slide */
+    height: auto; /* Mantiene la relación de aspecto */
+    display: block; /* Elimina el espacio blanco debajo de las imágenes */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    border: 1px solid #ddd; /* Borde alrededor de las imágenes */
+    transition: transform 0.5s ease; /* Suaviza el efecto de zoom */
+}
+
+
+
+/* Ocultar elementos de navegación y paginación */
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+    display: none; /* Oculta las flechas y los puntos de paginación */
+}
+
+/* Estilo para las flechas de navegación */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #333; /* Color de la flecha */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    border-radius: 50%; /* Bordes redondeados para el botón */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    position: absolute; /* Posiciona el botón */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta el botón para centrarlo verticalmente */
+}
+
+/* Estilo para la flecha de siguiente */
+.swiper-button-next {
+    right: 10px; /* Posición a la derecha */
+}
+
+/* Estilo para la flecha de anterior */
+.swiper-button-prev {
+    left: 10px; /* Posición a la izquierda */
+}
+
+/* Añadir flechas estilizadas */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 24px; /* Tamaño del icono de la flecha */
+    font-family: 'swiper-icons'; /* Asegúrate de incluir la fuente de iconos de Swiper */
+}
+
+/* Cambios de estilo al pasar el ratón por encima */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fondo blanco completo al pasar el ratón */
+    color: #3F51B5; /* Cambia el color de la flecha al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Flechas estilizadas */
+.swiper-button-next::after {
+    content: '→'; /* Flecha hacia la derecha */
+}
+
+.swiper-button-prev::after {
+    content: '←'; /* Flecha hacia la izquierda */
+}
+
+/* Ajuste para pantallas grandes (a partir de 700px de ancho) */
+@media (min-width: 700px) {
+    .swiper-slide {
+        width: 33.333%; /* Muestra tres imágenes a la vez */
+    }
+}
+
+/* Ajuste para pantallas medianas (entre 450px y 699px) */
+@media (max-width: 699px) and (min-width: 450px) {
+    .swiper-slide {
+        width: 50%; /* Muestra dos imágenes a la vez */
+    }
+}
+
+/* Ajuste para pantallas pequeñas (menos de 450px) */
+@media (max-width: 450px) {
+    .swiper-slide {
+        width: 100%; /* Muestra una imagen a la vez */
+        padding: 0 15px; /* Añade espacio alrededor de la imagen */
+    }
+
+    .swiper-slide img {
+        width: 100%; /* Agranda las imágenes al tamaño completo del contenedor */
+        height: auto; /* Mantiene la relación de aspecto */
+    }
+}
+
+
+
+
+
+
+
+/* Sección de Video */
+/* Sección de Video Destacado */
+#video {
+    border-color: #3F51B5; /* Color del borde específico para la sección de video */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+.video-container {
+    display: flex; /* Usa flexbox para la disposición horizontal */
+    flex-wrap: wrap; /* Permite que los videos se envuelvan si no caben en una fila */
+    gap: 20px; /* Espacio entre los videos */
+    justify-content: center; /* Centra los videos en la fila */
+}
+
+.video-item {
+    flex: 1 1 300px; /* Los videos ocupan al menos 300px y se expanden según el espacio disponible */
+    max-width: 560px; /* Ancho máximo del video */
+    margin: 10px; /* Margen alrededor de cada video */
+}
+
+.video-item iframe {
+    width: 100%; /* Ancho completo del contenedor del video */
+    height: 315px; /* Altura del video */
+    border-radius: 8px; /* Bordes redondeados para los iframes */
+    border: 1px solid #ddd; /* Borde alrededor del iframe */
+}
+/* Sección de Testimonios */
+#testimonials {
+    border-color: #00BCD4; /* Color del borde específico para los testimonios */
+}
+
+.testimonial {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff; /* Fondo blanco para los testimonios */
+}
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.extra-faq {
+    display: none;
+}
+
+.faq-question:hover {
+    color: #007BFF;
+    transform: scale(1.05);
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Botón para mostrar más preguntas */
+#toggle-faq {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-faq:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/* Estilos generales para la sección del equipo */
+#team {
+    background-color: #f4f6f9;
+    padding: 50px 20px;
+}
+
+#team h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+/* Estilos para los íconos del equipo */
+.icon-team {
+    font-size: 50px; /* Tamaño del ícono */
+    width: 60px; /* Tamaño del contenedor del ícono */
+    height: 60px; /* Tamaño del contenedor del ícono */
+    border-radius: 50%; /* Forma circular del contenedor */
+    display: flex;
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+    color: #ffffff; /* Color inicial del ícono */
+    background: #3F51B5; /* Fondo inicial */
+    border: 2px solid #3F51B5; /* Borde del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
+    animation: pulse-team 2s infinite; /* Animación de pulso */
+}
+
+/* Animación de pulso específica para los íconos del equipo */
+@keyframes pulse-team {
+    0% {
+        transform: scale(1); /* Tamaño inicial */
+        background: #3F51B5; /* Color de fondo inicial */
+        color: #ffffff; /* Color del ícono inicial */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta el tamaño */
+        background: #FF5722; /* Color de fondo cambia a naranja */
+        color: #ffffff; /* Color del ícono cambia a blanco */
+    }
+    100% {
+        transform: scale(1); /* Tamaño original */
+        background: #3F51B5; /* Color de fondo regresa a azul */
+        color: #ffffff; /* Color del ícono regresa a blanco */
+    }
+}
+
+/* Paletas de colores para diferentes íconos del equipo */
+.icon-team-1 {
+    background: #3F51B5; /* Azul */
+    border: 2px solid #3F51B5; /* Azul */
+}
+
+.icon-team-2 {
+    background: #FF5722; /* Naranja */
+    border: 2px solid #FF5722; /* Naranja */
+}
+
+.icon-team-3 {
+    background: #E91E63; /* Rosa */
+    border: 2px solid #E91E63; /* Rosa */
+}
+
+/* Estilo para los párrafos en la descripción del equipo */
+.team-member p {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 0.9em; /* Tamaño de fuente ajustado */
+    color: #555; /* Color de texto */
+}
+
+.team-member p + p {
+    margin-top: -9px; /* Espacio reducido entre párrafos */
+}
+
+
+/* Estilos generales para la sección de contacto */
+#contact {
+    background: linear-gradient(to right, #f0f4f8, #e0e6ed);
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+/* Estilo del título */
+#contact h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+/* Estilos para el formulario */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las etiquetas */
+#contact-form label {
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilos para los campos de entrada */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo de enfoque para campos de entrada */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #3F51B5;
+    box-shadow: 0 0 6px rgba(63, 81, 181, 0.2);
+    outline: none;
+}
+
+/* Estilos para el área de texto */
+#contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estilos para el botón de envío */
+#contact-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #3F51B5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+}
+
+/* Efecto hover para el botón */
+#contact-form button:hover {
+    background-color: #303f9f;
+    transform: scale(1.03);
+}
+
+/* Estilos para hacer el formulario responsivo */
+@media (max-width: 768px) {
+    #contact {
+        padding: 30px 10px;
+    }
+    #contact-form {
+        padding: 15px;
+    }
+    #contact-form button {
+        width: 100%;
+    }
+}
+
+
+
+/* Estilos para el contenedor Swiper */
+.swiper-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para las diapositivas del Swiper */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Estilos para los botones de navegación */
+.swiper-button-next, .swiper-button-prev {
+    color: #3F51B5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #3F51B5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;
+}
+
+/* Estilos para la paginación */
+.swiper-pagination-bullet {
+    background: #3F51B5;
+}
+
+
+
+/* Estilos para los botones de navegación */
+.swiper-button-next, .swiper-button-prev {
+    color: #3F51B5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #3F51B5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;
+}
+
+/* Estilos para la paginación */
+.swiper-pagination-bullet {
+    background: #3F51B5;
+}
+
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 500px;
+    border: 0;
+    border-radius: 8px; /* Redondea las esquinas del mapa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 400px; /* Ajuste de altura para una visualización más equilibrada */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 400px; /* Ajuste de altura para una visualización equilibrada */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 400px; /* Ajuste de altura para una visualización equilibrada */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* Estilos generales para el pie de página */
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 400px; /* Ajuste de altura para una visualización equilibrada */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* Estilos generales para el pie de página */
+/* Estilos para la sección del mapa */
+section iframe.map {
+    width: 100%;
+    height: 400px; /* Ajuste de altura para una visualización equilibrada */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 40px; /* Espacio debajo del mapa */
+}
+
+/* General footer styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre columnas */
+}
+
+.footer-column {
+    flex: 1 1 200px; /* Flexibilidad para las columnas */
+    display: flex;
+    flex-direction: column; /* Alineación vertical dentro de la columna */
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    flex: 1 1 200px; /* Flexibilidad para la sección de redes sociales */
+    display: flex;
+    flex-direction: column; /* Alineación vertical para el título */
+}
+
+.footer-socials h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.footer-socials .socials {
+    display: flex;
+    gap: 10px; /* Espacio entre los íconos de redes sociales */
+}
+
+.footer-socials .social-link img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer bottom styling */
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #666;
+}

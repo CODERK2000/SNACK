@@ -1,0 +1,86 @@
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2rem; /* Tamaño más pequeño */
+    font-weight: 400;
+    color: #fff;
+    background: linear-gradient(135deg, #d4a373, #8b4513); /* Gradiente con tonos tierra */
+    padding: 8px 15px; /* Menor padding */
+    border-radius: 40px; /* Borde redondeado */
+    display: inline-block;
+    text-transform: uppercase;
+    border: 2px solid #d4a373; /* Borde con color tierra claro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo al pasar el cursor */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+    transform: translate(-50%, -50%);
+}
+
+.logo:hover::before {
+    width: 130%;
+    height: 130%;
+}
+
+.logo:hover {
+    background: linear-gradient(135deg, #8b4513, #d4a373); /* Inversión de colores en el hover */
+    transform: rotate(-3deg) scale(1.05); /* Ligera rotación y aumento */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+/* Diseño de ícono de papa */
+.logo .icono-papa {
+    position: absolute;
+    top: -8px;
+    right: -16px;
+    width: 35px; /* Tamaño más pequeño */
+    height: 35px;
+    background-color: #d2b48c; /* Color de la papa */
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle volumen */
+}
+
+/* Detalles de la papa (ojos) */
+.logo .icono-papa::before,
+.logo .icono-papa::after {
+    content: '';
+    position: absolute;
+    background-color: #8b4513; /* Color oscuro para los ojos de la papa */
+    border-radius: 50%;
+}
+
+.logo .icono-papa::before {
+    width: 6px; /* Tamaño reducido */
+    height: 6px;
+    top: 12px;
+    left: 10px;
+}
+
+.logo .icono-papa::after {
+    width: 5px; /* Tamaño reducido */
+    height: 5px;
+    top: 24px;
+    left: 20px;
+}
+
+/* Estilos del header y navegación */
+
+.logo-container {
+    flex: 1;
+    padding-left: 0; /* Elimina el padding a la izquierda */
+    margin-left: 0; /* Elimina el margen a la izquierda */
+
+}

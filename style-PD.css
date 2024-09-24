@@ -1,0 +1,551 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Estilos para la sección de productos */
+.product-section {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Cuadrícula de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-item {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.price {
+    font-size: 1.25rem;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+/* Estilos del logo */
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    background: linear-gradient(135deg, #d4a373, #8b4513);
+    padding: 10px 20px;
+    border-radius: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 2px solid #d4a373;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo:hover {
+    background: linear-gradient(135deg, #8b4513, #d4a373);
+    transform: rotate(-3deg) scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+    transform: translate(-50%, -50%);
+}
+
+.logo:hover::before {
+    width: 130%;
+    height: 130%;
+}
+
+/* Header y navegación */
+header {
+    background-color: #333;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure positioning context for absolute elements */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e91e63;
+}
+
+/* Carrito de compra */
+.cart-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it is above other content */
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#cart-icon {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 2rem; /* Tamaño del ícono del carrito */
+}
+
+#cart-icon i {
+    margin-right: 8px; /* Espacio entre el ícono y el contador */
+}
+
+.cart-count {
+    background-color: #e91e63;
+    color: white;
+    font-size: 1rem; /* Tamaño de fuente del conteo */
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+/* Transición para hover en el carrito */
+#cart-icon:hover .cart-count {
+    background-color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#cart-modal .cart-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative; /* Para posicionar el botón de cierre */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item img {
+    max-width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+.cart-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Centra los botones */
+}
+
+.cart-buttons button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+.btn-close {
+    background-color: #e0e0e0;
+}
+
+.btn-close:hover {
+    background-color: #ccc;
+}
+
+.btn-purchase {
+    background-color: #e91e63;
+    color: white;
+}
+
+.btn-purchase:hover {
+    background-color: #d81b60;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-container {
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+    }
+    
+    #cart-icon i {
+        font-size: 1.5rem; /* Ajusta el tamaño del ícono para pantallas pequeñas */
+    }
+    
+    .cart-count {
+        font-size: 0.8rem; /* Ajusta el tamaño de fuente del conteo para pantallas pequeñas */
+        padding: 2px 4px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    #cart-modal .cart-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+/* Estilos para los modales */
+.cart-modal, .payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Contenido del modal de pago */
+.payment-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px; /* Ajusta el tamaño máximo del modal */
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Oculta los modales por defecto */
+.hidden {
+    display: none;
+}
+
+/* Estilos específicos para el modal del carrito */
+.cart-items {
+    margin-bottom: 20px;
+    max-height: 300px; /* Ajusta según sea necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    padding-right: 10px; /* Para evitar el contenido tapado por la barra de desplazamiento */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item img {
+    max-width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+.cart-buttons {
+    margin-top: 20px; /* Ajusta el margen para que se acomode con el desplazamiento */
+    display: flex;
+    flex-direction: column; /* Asegura que los botones estén en columna */
+    gap: 10px; /* Espacio entre los botones */
+    position: sticky;
+    bottom: 30px; /* Ajusta la distancia desde el fondo del modal */
+    background-color: white;
+    padding: 10px;
+}
+
+/* Estilos de los botones */
+.cart-buttons button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0; /* Quita el margen entre los botones */
+}
+
+.btn-close {
+    background-color: #e0e0e0;
+}
+
+.btn-close:hover {
+    background-color: #ccc;
+}
+
+.btn-purchase {
+    background-color: #e91e63;
+    color: white;
+}
+
+.btn-purchase:hover {
+    background-color: #d81b60;
+}
+
+/* Ajustes para el formulario en el modal de pago */
+.payment-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre las secciones */
+    width: 100%;
+}
+
+/* Ajustes para las secciones del formulario */
+.form-sections {
+    display: flex;
+    gap: 20px; /* Mayor espacio entre las columnas */
+    width: 100%;
+    flex-wrap: wrap; /* Permite el ajuste de columnas en pantallas más pequeñas */
+}
+
+/* Ajustes para cada columna */
+.form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre campos dentro de la columna */
+    min-width: 0; /* Permite que las columnas se reduzcan más si es necesario */
+}
+
+
+.payment-content .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para cada campo del formulario */
+.payment-content label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.payment-content input {
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.btn-submit, .btn-close {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Botones */
+.btn-submit, .btn-cancel {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 120px; /* Ajusta el ancho de los botones */
+}
+
+/* Botones */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Botón de Enviar */
+.btn-submit {
+    background-color: #4caf50;
+    color: white;
+}
+.btn-submit:hover {
+    background-color: #45a049;
+}
+/* Botón de Cancelar */
+.btn-cancel {
+    background-color: #ff5722;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #e64a19;
+}
+
+.btn-close {
+    background-color: #e0e0e0;
+}
+
+.btn-close:hover {
+    background-color: #ccc;
+}
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .payment-content {
+        width: 95%;
+        max-width: 100%;
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .form-sections {
+        flex-direction: column; /* Cambia a una sola columna en pantallas pequeñas */
+        gap: 20px; /* Espacio vertical entre las secciones en pantallas pequeñas */
+    }
+
+    .btn-container {
+        flex-direction: column; /* Coloca los botones en una columna en pantallas pequeñas */
+        gap: 15px; /* Espacio entre los botones en pantalla pequeña */
+    }
+}

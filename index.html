@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snackichif</title>
+    <!-- Vincular CSS externo -->
+    <link rel="stylesheet" href="style-LG.css">
+    <link rel="stylesheet" href="style-PD.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index-principal.css">
+    <link rel="stylesheet" href="stiles-icon.css">
+    <!-- Vincular Swiper CSS para el slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                Snackichif
+                <div class="icono-papa"></div>
+            </div>
+            <!-- Botón de toggle para móviles -->
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776;
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="index.html">Servicios</a></li>
+                <li><a href="index-PD.html">Productos</a></li>
+                <li><a href="index.html">Galería</a></li>
+                <li><a href="index.html">Video</a></li>
+                <li><a href="index.html">Testimonios</a></li>
+                <li><a href="index.html">FAQ</a></li>
+                <li><a href="index.html">Equipo</a></li>
+                <li><a href="index.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Sección Principal -->
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <div class="text-content">
+                    <h1>Bienvenido a Nuestra Página Web</h1>
+                    <p>Estamos encantados de tenerte aquí. Explora nuestros servicios y conoce más sobre nosotros.</p>
+                </div>
+                <div class="image-content">
+                    <img src="images/ruta-de-tu-imagen.jpg" alt="Imagen de fondo">
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="about" class="section-blue">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/chisfles.jpg" alt="Imagen sobre nosotros">
+                </div>
+                <div class="about-text">
+                    <p>Somos una empresa dedicada a ofrecer las mejores soluciones para tus necesidades. Con años de experiencia y un equipo profesional, estamos aquí para ayudarte a alcanzar tus objetivos.</p>
+                    <a href="index-nosotros.html" class="btn-conocenos">Conócenos más</a>
+                </div>
+            </div>
+        </section>        
+
+        <section id="services">
+            <h2>Servicios</h2>
+            <div class="service">
+                <h3>Consultoría</h3>
+                <p>Ofrecemos servicios de consultoría para ayudarte a tomar decisiones informadas y estratégicas.</p>
+            </div>
+            <div class="service">
+                <h3>Desarrollo Web</h3>
+                <p>Desarrollamos sitios web personalizados y optimizados para tu negocio.</p>
+            </div>
+            <div class="service">
+                <h3>Marketing Digital</h3>
+                <p>Implementamos estrategias de marketing digital para aumentar tu visibilidad y atraer clientes.</p>
+            </div>
+            <div class="service">
+                <h3>Estrategias de Negocio</h3>
+                <p>Diseñamos estrategias de negocio para mejorar tu rendimiento y crecer sosteniblemente.</p>
+            </div>
+        </section>
+
+        <!-- Sección del Slider de Imágenes -->
+        <section id="gallery">
+            <h2>Galería de Imágenes</h2>
+            <div class="swiper-container mySwiper-1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/placeholder1.jpg" alt="Imagen 1"></div>
+                    <div class="swiper-slide"><img src="images/placeholder2.jpg" alt="Imagen 2"></div>
+                    <div class="swiper-slide"><img src="images/placeholder3.jpg" alt="Imagen 3"></div>
+                    <div class="swiper-slide"><img src="images/placeholder4.jpg" alt="Imagen 4"></div>
+                    <div class="swiper-slide"><img src="images/placeholder5.jpg" alt="Imagen 5"></div>
+                </div>
+                <!-- Paginación y navegación del slider -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- Sección de Video -->
+        <section id="video">
+            <h2>Video Destacado</h2>
+            <div class="video-container">
+                <div class="video-item" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video destacado 1" allowfullscreen></iframe>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/9bZkp7q19f0">
+                    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Video destacado 2" allowfullscreen></iframe>
+                </div>
+                <div class="video-item" data-video="https://www.youtube.com/embed/3tmd-ClpJxA">
+                    <iframe src="https://www.youtube.com/embed/3tmd-ClpJxA" title="Video destacado 3" allowfullscreen></iframe>
+                </div>
+        </section>
+        <!-- Sección de Testimonios -->
+        <section id="testimonials" class="section section-blue">
+            <h2>Testimonios</h2>
+            <div class="swiper-container mySwiper-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono masculino -->
+                            
+                            <p>"Este es un testimonio de ejemplo. El servicio fue excelente y superó nuestras expectativas."</p>
+                            <cite>- Juan Pérez</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono femenino -->
+                            <p>"La experiencia fue maravillosa. Recomendamos esta empresa a todos nuestros conocidos."</p>
+                            <cite>- María Gómez</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono masculino -->
+                            <p>"Un servicio muy profesional y eficiente. Estoy muy contento con los resultados."</p>
+                            <cite>- Carlos Rodríguez</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono femenino -->
+                            <p>"Un equipo excepcional. Atendieron todas nuestras necesidades con gran profesionalismo."</p>
+                            <cite>- Laura Fernández</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono masculino -->
+                            <p>"Excelente atención al cliente y resultados de alta calidad. Sin duda volveré a utilizar sus servicios."</p>
+                            <cite>- Pedro Martínez</cite>
+                        </div>
+                    </div>
+                    <!-- Testimonios adicionales -->
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono femenino -->
+                            <p>"Gran experiencia. Superaron todas nuestras expectativas y el proceso fue muy sencillo."</p>
+                            <cite>- Ana Ruiz</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono masculino -->
+                            <p>"Muy satisfecho con el trabajo realizado. El equipo fue muy profesional y eficiente."</p>
+                            <cite>- Roberto Sánchez</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono femenino -->
+                            <p>"Los resultados fueron más allá de lo esperado. Recomendamos ampliamente sus servicios."</p>
+                            <cite>- Isabel Morales</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono masculino -->
+                            <p>"Un servicio muy bien ejecutado. La comunicación y el resultado final fueron excelentes."</p>
+                            <cite>- Daniel Romero</cite>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial">
+                            <i class="icon1 fas fa-user"></i> <!-- Ícono femenino -->
+                            <p>"Estamos muy contentos con el resultado. El equipo hizo un trabajo excepcional."</p>
+                            <cite>- Carolina Vargas</cite>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paginación y navegación del slider -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>        
+        
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">¿Cómo puedo contactarlos?</h3>
+                <p class="faq-answer">Puedes contactarnos a través del formulario en la sección de contacto o enviarnos un correo electrónico a contacto@miempresa.com.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">¿Cuánto tiempo tarda en completarse un proyecto?</h3>
+                <p class="faq-answer">El tiempo de completación depende del tipo y la complejidad del proyecto. Generalmente, te proporcionaremos un cronograma detallado después de la consulta inicial.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">¿Ofrecen soporte después del proyecto?</h3>
+                <p class="faq-answer">Sí, ofrecemos soporte continuo y mantenimiento según lo acordado en el contrato del proyecto.</p>
+            </div>
+            <div class="faq-item extra-faq">
+                <h3 class="faq-question">¿Cuál es el horario de atención?</h3>
+                <p class="faq-answer">Nuestro horario de atención es de lunes a viernes, de 9:00 a 18:00.</p>
+            </div>
+            <div class="faq-item extra-faq">
+                <h3 class="faq-question">¿Cómo puedo contactar con el soporte técnico?</h3>
+                <p class="faq-answer">Puede contactar con nuestro soporte técnico a través del correo electrónico soporte@ejemplo.com o llamando al 123-456-7890.</p>
+            </div>
+            <div class="faq-item extra-faq">
+                <h3 class="faq-question">¿Cuál es el proceso de devolución?</h3>
+                <p class="faq-answer">Para realizar una devolución, por favor, póngase en contacto con nuestro servicio de atención al cliente. Asegúrese de tener su número de pedido y los artículos en su embalaje original.</p>
+            </div>
+            <button id="toggle-faq">Mostrar Más</button>
+        </section>
+        
+        
+
+        <section id="team"> 
+            <h2>Conoce a Nuestro Equipo</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <i class="fa-solid fa-user-tie icon-team icon-team-1"></i> <!-- Ícono para el miembro del equipo 1 -->
+                    <!-- <img src="https://via.placeholder.com/150" alt="Miembro del equipo 3">-->
+                    <h3>Nombre del Miembro 1</h3>
+                    <p>Rol: Especialista en Marketing Digital</p>
+                    <p>Descripción breve sobre el miembro del equipo y sus especialidades.</p>
+                </div>
+                <div class="team-member">
+                    <i class="fa-solid fa-user-tie icon-team icon-team-2"></i> <!-- Ícono para el miembro del equipo 2 -->
+                        <!-- <img src="https://via.placeholder.com/150" alt="Miembro del equipo 3">-->
+                    <h3>Nombre del Miembro 2</h3>
+                    <p>Rol: Especialista en Desarrollo Web</p>
+                    <p>Descripción breve sobre el miembro del equipo y sus especialidades.</p>
+                </div>
+                <div class="team-member">
+                    <i class="fa-solid fa-user-tie icon-team icon-team-3"></i> <!-- Ícono para el miembro del equipo 3 -->
+                        <!-- <img src="https://via.placeholder.com/150" alt="Miembro del equipo 3">-->
+                    <h3>Nombre del Miembro 3</h3>
+                    <p>Rol: Especialista en Consultoría</p>
+                    <p>Descripción breve sobre el miembro del equipo y sus especialidades.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Sección de Contacto -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <!-- Pie de Página -->
+    <section>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.623680221003!2d-77.28857879966174!3d-11.507046654622396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91068c06526e918d%3A0x2d65ccb459b1c660!2sC.p%20Pampa%20Libre%20Etapa%202%2C%2015130!5e0!3m2!1ses-419!2spe!4v1725160612674!5m2!1ses-419!2spe" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column footer-info">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-services">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Consultoría</a></li>
+                    <li><a href="#">Desarrollo Web</a></li>
+                    <li><a href="#">Marketing Digital</a></li>
+                    <li><a href="#">Soporte Técnico</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-contact">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">Ubicación</a></li>
+                    <li><a href="#">Redes Sociales</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-socials">
+                <h4>Redes Sociales</h4>
+                <div class="socials">
+                    <a href="https://facebook.com" target="_blank" class="social-link">
+                        <img src="images/s1.svg" alt="Facebook">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <img src="images/s2.svg" alt="Twitter">
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <img src="images/s3.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Vincular JS externo -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script-testimonial.js"></script>
+    <script src="https://kit.fontawesome.com/c454deb21e.js" crossorigin="anonymous"></script>
+</body>
+</html>
